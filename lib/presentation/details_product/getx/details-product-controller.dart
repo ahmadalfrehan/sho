@@ -2,7 +2,7 @@ import 'package:assignment/config/utils/constants/export.dart';
 
 import '../../../domain/entity/product-entity.dart';
 
-class ProductController extends GetxController{
+class DetailsProductController extends GetxController{
 
   Rx<ProductEntity> productEntity = ProductEntity.empty().obs;
 

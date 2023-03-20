@@ -5,8 +5,9 @@ import 'package:assignment/presentation/products/pages/products.dart';
 import 'package:assignment/presentation/splash/splash.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
-import '../../presentation/product/getx/product-bindings.dart';
-import '../../presentation/product/pages/details-product.dart';
+
+import '../../presentation/details_product/getx/details-product-bindings.dart';
+import '../../presentation/details_product/pages/details-product.dart';
 import '../../presentation/products/getx/product-bindings.dart';
 
 import '../../presentation/splash/getx/splash-bindings.dart';
@@ -33,7 +34,7 @@ class AppPages {
       GetPage(
         name: AppRoutes.DETAILS_PRODUCT,
         page: () => const DetailsProduct(),
-        binding: ProductBindings(),
+        binding: DetailsProductBindings(),
       )
     ];
   }
