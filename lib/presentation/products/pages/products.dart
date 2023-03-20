@@ -1,13 +1,13 @@
 import 'package:assignment/config/theme/app-theme.dart';
 import 'package:assignment/config/utils/constants/urls.dart';
-import 'package:assignment/presentation/home/getx/home-controller.dart';
-import 'package:assignment/presentation/home/pages/widget/product.dart';
+import 'package:assignment/presentation/products/getx/product-controller.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../config/style/app-text-style.dart';
 import '../../../config/utils/constants/export.dart';
+import '../widget/product.dart';
 
-class Products extends GetView<HomeController> {
+class Products extends GetView<ProductController> {
   const Products({Key? key}) : super(key: key);
 
   @override
@@ -51,10 +51,10 @@ class Products extends GetView<HomeController> {
               padding: EdgeInsets.only(
                 top: ScreenStability.height(30),
                 left: ScreenStability.width(29),
-                right: ScreenStability.width(17),
+                right: ScreenStability.width(30),
               ),
               child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
                     'Shoes',
@@ -65,10 +65,12 @@ class Products extends GetView<HomeController> {
                       decoration: TextDecoration.underline,
                     ),
                   ),
-                  SizedBox(width: ScreenStability.width(42)),
-                  const Text('Unisex socks',
-                      style:
-                          AppTextStyle.textStyleWith500Weight16SizeWhiteColor),
+                  const Opacity(
+                    opacity: 0.5,
+                    child: Text('Unisex socks',
+                        style: AppTextStyle
+                            .textStyleWith500Weight16SizeWhiteColor),
+                  ),
                   Image.asset('${pathToAssetsImages}setting-4.png'),
                   Container(
                       height: ScreenStability.height(30),

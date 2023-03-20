@@ -1,10 +1,10 @@
 import 'package:assignment/config/theme/app-theme.dart';
 import 'package:assignment/config/utils/constants/assets-paths.dart';
 import 'package:assignment/presentation/home/getx/home-controller.dart';
-import 'package:assignment/presentation/home/pages/products.dart';
 import 'package:assignment/presentation/home/widgets/app-bottom-navigation-bar.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import '../../products/pages/products.dart';
 
 class Home extends GetView<HomeController> {
   const Home({Key? key}) : super(key: key);

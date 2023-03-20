@@ -14,13 +14,13 @@ class Product extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: ScreenStability.height(237),
-      width: ScreenStability.width(224),
+      width: ScreenStability.width(324),
       decoration: const BoxDecoration(color: AppTheme.blackColor),
       child: Stack(
         children: [
           _layoutContainer(),
           Align(
-            alignment: const Alignment(0, -1.7),
+            alignment: const Alignment(50, -1.9),
             child: Image.asset(productEntity.image.toString()),
           )
         ],
@@ -31,7 +31,7 @@ class Product extends StatelessWidget {
   _layoutContainer() {
     return ClipPath(
       child: Container(
-        height: ScreenStability.height(218),
+        height: ScreenStability.height(200),
         width: ScreenStability.width(150),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -45,9 +45,9 @@ class Product extends StatelessWidget {
             tileMode: TileMode.clamp,
           ),
           borderRadius: BorderRadius.only(
-            topRight: Radius.circular(400),
-            bottomRight: Radius.circular(50),
-            bottomLeft: Radius.circular(50),
+            topRight: Radius.circular(1000),
+            bottomRight: Radius.circular(100),
+            bottomLeft: Radius.circular(100),
             topLeft: Radius.circular(50),
           ),
         ),
