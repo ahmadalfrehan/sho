@@ -11,4 +11,5 @@ class AssetsPaths{
   static const SHO2  = '${pathToAssetsImages}sho2.png';
   static const SHO3  = '${pathToAssetsImages}sho3.png';
   static const SHO4  = '${pathToAssetsImages}sho4.png';
+  static const QWS  = '${pathToAssetsImages}qws.png';
 }

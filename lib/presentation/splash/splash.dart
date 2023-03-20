@@ -1,11 +1,10 @@
 import 'dart:developer';
 import 'dart:ui';
 
+import 'package:assignment/config/routes/app-routes.dart';
 import 'package:assignment/config/theme/app-theme.dart';
 import 'package:assignment/config/utils/constants/export.dart';
 import 'package:assignment/presentation/splash/getx/splash-controller.dart';
-
-import '../../config/style/app-text-style.dart';
 
 class Splash extends GetView<SplashController> {
   const Splash({Key? key}) : super(key: key);
@@ -85,52 +84,60 @@ class Splash extends GetView<SplashController> {
                   ),
                 ),
                 SizedBox(height: ScreenStability.height(132)),
-                Padding(
-                  padding: EdgeInsets.only(
-                    right: ScreenStability.width(32),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Container(
-                        width: ScreenStability.width(165),
-                        height: ScreenStability.height(51),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(17),
-                          color: AppTheme.greenDarkenMore,
-                        ),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            Container(
-                              width: ScreenStability.width(46),
-                              height: ScreenStability.height(46),
-                              decoration: BoxDecoration(
-                                color: AppTheme.greenDarken,
-                                borderRadius: BorderRadius.circular(17),
+                InkWell(
+                  onTap: () {
+                    Get.offAllNamed(AppRoutes.HOME);
+                  },
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      right: ScreenStability.width(32),
+                    ),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Container(
+                          width: ScreenStability.width(165),
+                          height: ScreenStability.height(51),
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(17),
+                            color: AppTheme.greenDarkenMore,
+                          ),
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Container(
+                                width: ScreenStability.width(46),
+                                height: ScreenStability.height(46),
+                                decoration: BoxDecoration(
+                                  color: AppTheme.greenDarken,
+                                  borderRadius: BorderRadius.circular(17),
+                                ),
+                                alignment: Alignment.center,
+                                child: const Icon(
+                                  Icons.arrow_forward_ios,
+                                  color: AppTheme.whiteColor,
+                                  size: 15,
+                                ),
                               ),
-                              alignment: Alignment.center,
-                              child: const Icon(Icons.arrow_forward_ios,
-                                  color: AppTheme.whiteColor,size: 15,),
-                            ),
-                            const Text('Swipe',
-                                style: AppTextStyle
-                                    .textStyleWith400Weight18SizeWhiteColor),
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: const [
-                                Icon(Icons.arrow_forward_ios,
-                                    color: AppTheme.whiteColor, size: 15),
-                                Icon(Icons.arrow_forward_ios,
-                                    color: AppTheme.whiteColor, size: 14),
-                                Icon(Icons.arrow_forward_ios,
-                                    color: AppTheme.greenDarken, size: 12),
-                              ],
-                            ),
-                          ],
+                              const Text('Swipe',
+                                  style: AppTextStyle
+                                      .textStyleWith400Weight18SizeWhiteColor),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: const [
+                                  Icon(Icons.arrow_forward_ios,
+                                      color: AppTheme.whiteColor, size: 15),
+                                  Icon(Icons.arrow_forward_ios,
+                                      color: AppTheme.whiteColor, size: 14),
+                                  Icon(Icons.arrow_forward_ios,
+                                      color: AppTheme.greenDarken, size: 12),
+                                ],
+                              ),
+                            ],
+                          ),
                         ),
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
                 ),
               ],
