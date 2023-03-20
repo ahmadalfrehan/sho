@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 
 
 import '../../../config/style/app-text-style.dart';
+import '../../../config/theme/app-theme.dart';
 import '../../../config/utils/constants/export.dart';
 import 'app-bottom-navigation-bar.dart';
 
@@ -109,7 +110,7 @@ class _AppTabItemState extends State<AppTabItem> {
                             SvgPicture.asset(widget.image.toString(),
                                 height: 20,
                                 width: 20,
-                                // color: AppTheme.greyIcon211
+                                // color: AppTheme.whiteColor
                             ),
                             const SizedBox(height: 5),
                             // Text(widget.title.toString(),

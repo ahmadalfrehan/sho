@@ -23,14 +23,14 @@ class AppBottomNavBar extends StatefulWidget {
 
   final List<Widget?>? badges;
 
-  AppBottomNavBar({
+   AppBottomNavBar({
     super.key,
     this.textStyle,
-    this.tabIconColor = Colors.black,
+    this.tabIconColor = Colors.white,
     this.tabIconSize = 24,
     this.tabIconSelectedColor = Colors.white,
     this.tabIconSelectedSize = 24,
-    this.tabSelectedColor = Colors.black,
+    this.tabSelectedColor = Colors.white,
     this.tabBarColor = Colors.white,
     this.tabBarHeight = 65,
     this.tabSize = 60,
@@ -178,7 +178,7 @@ class _AppBottomNavBarState extends State<AppBottomNavBar>
               ),
               IgnorePointer(
                 child: Container(
-                  decoration: const BoxDecoration(color: Colors.transparent),
+                  decoration: const BoxDecoration(color: Colors.white),
                   child: Align(
                     heightFactor: 0,
                     alignment: Alignment(_positionAnimation.value, 0),
@@ -188,8 +188,8 @@ class _AppBottomNavBarState extends State<AppBottomNavBar>
                         alignment: Alignment.center,
                         children: <Widget>[
                           SizedBox(
-                            height: widget.tabSize! + 30,
-                            width: widget.tabSize! + 30,
+                            height: widget.tabSize! + 50,
+                            width: widget.tabSize! + 50,
                             child: ClipRect(
                               clipper: HalfClipper(),
                               child: Center(
@@ -199,19 +199,19 @@ class _AppBottomNavBarState extends State<AppBottomNavBar>
                                   decoration: BoxDecoration(
                                     color: widget.tabBarColor,
                                     shape: BoxShape.circle,
-                                    boxShadow: const [
-                                      BoxShadow(
-                                        // color: Colors.black12,
-                                        blurRadius: 8,
-                                      )
-                                    ],
+                                    // boxShadow: const [
+                                    //   BoxShadow(
+                                    //     // color: Colors.black12,
+                                    //     blurRadius: 8,
+                                    //   )
+                                    // ],
                                   ),
                                 ),
                               ),
                             ),
                           ),
                           SizedBox(
-                            height: widget.tabSize! + 15,
+                            height: widget.tabSize! + 35,
                             width: widget.tabSize! + 35,
                             child: CustomPaint(
                                 painter:
@@ -231,7 +231,8 @@ class _AppBottomNavBarState extends State<AppBottomNavBar>
                                   alignment: Alignment.center,
                                   children: [
                                     SvgPicture.asset(activeIcon,
-                                        color: widget.tabBarColor),
+                                        // color: widget.tabBarColor
+                                    ),
                                     activeBadge != null
                                         ? Positioned(
                                             top: 0,
@@ -269,7 +270,7 @@ class _AppBottomNavBarState extends State<AppBottomNavBar>
         image: image,
         title: tabLabel,
         textStyle: widget.textStyle ?? const TextStyle(color: Colors.black),
-        tabIconColor: widget.tabIconColor ?? Colors.black,
+        tabIconColor: widget.tabIconColor ?? Colors.white10,
         tabIconSize: widget.tabIconSize,
         badge: badge,
         callbackFunction: () {

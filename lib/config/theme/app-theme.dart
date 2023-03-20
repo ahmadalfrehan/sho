@@ -1,3 +1,4 @@
+import 'package:assignment/config/utils/constants/export.dart';
 import 'package:flutter/widgets.dart';
 
 class AppTheme{
@@ -11,4 +12,5 @@ class AppTheme{
   static const Color gradiantColorMore = Color.fromRGBO(255,255,255,0.58);
   static const Color gradiantColorMore08 = Color.fromRGBO(255,255,255,0.8);
   static const Color blackColor = Color(0xFF051111);
+  static const Color trans = Colors.transparent;
 }

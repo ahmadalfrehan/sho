@@ -3,7 +3,6 @@ import 'package:assignment/config/utils/constants/urls.dart';
 import 'package:assignment/presentation/products/getx/product-controller.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-import '../../../config/style/app-text-style.dart';
 import '../../../config/utils/constants/export.dart';
 import '../widget/product.dart';
 
@@ -108,6 +107,7 @@ class Products extends GetView<ProductsController> {
                 padding: const EdgeInsets.only(left: 12),
                 child: ListView.builder(
                   itemCount: controller.productEntities.length,
+                  physics: BouncingScrollPhysics(),
                   itemBuilder: (BuildContext context, int index) {
                     return Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -130,7 +130,7 @@ class Products extends GetView<ProductsController> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const SizedBox(height: 110),
+                              const SizedBox(height: 100),
                               Product(
                                   productEntity:
                                       controller.productEntities[index]),
