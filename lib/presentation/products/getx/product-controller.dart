@@ -2,7 +2,7 @@ import 'package:assignment/config/utils/constants/export.dart';
 
 import '../../../domain/entity/product-entity.dart';
 
-class ProductController extends GetxController{
+class ProductsController extends GetxController{
   RxList<ProductEntity> productEntities = <ProductEntity>[
     ProductEntity(
         title: 'Hermes rivera',
@@ -89,4 +89,14 @@ class ProductController extends GetxController{
         rateV: '4.5',
         image: AssetsPaths.SHO4),
   ].obs;
+  Rx<ProductEntity> productEntity = ProductEntity.empty().obs;
+
+  @override
+  void onInit() {
+    final data = Get.arguments;
+    if (data != null) {
+      productEntity.value = data[0]['product'];
+    }
+    super.onInit();
+  }
 }

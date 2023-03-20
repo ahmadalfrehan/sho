@@ -6,6 +6,7 @@ class ProductEntity {
   String? price;
   String? rateV;
 
+  ProductEntity.empty();
   ProductEntity({
     required this.title,
     required this.description,

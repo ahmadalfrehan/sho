@@ -7,7 +7,7 @@ import '../../../config/style/app-text-style.dart';
 import '../../../config/utils/constants/export.dart';
 import '../widget/product.dart';
 
-class Products extends GetView<ProductController> {
+class Products extends GetView<ProductsController> {
   const Products({Key? key}) : super(key: key);
 
   @override
