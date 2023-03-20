@@ -16,8 +16,6 @@ class Home extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-
-      // backgroundColor: Colors.white10,
       body: Stack(
         alignment: Alignment.bottomCenter,
         children: [
@@ -38,10 +36,8 @@ class Home extends GetView<HomeController> {
       bottomNavigationBar: Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          // const Spacer(),
           Container(
             alignment: Alignment.bottomCenter,
-            // height: 220,
             clipBehavior: Clip.none,
             decoration: BoxDecoration(
                 color: AppTheme.trans, borderRadius: BorderRadius.circular(55)),
@@ -92,52 +88,7 @@ class Home extends GetView<HomeController> {
         ],
       ),
 
-      // bottomNavigationBar: Stack(
-      //   alignment: Alignment.bottomCenter,
-      //   children: [
-      //     MoltenBottomNavigationBar(
-      //       // barColor: Colors.transparent,
-      //       // borderColor: Colors.transparent,
-      //       selectedIndex: controller.index.value,
-      //       onTabChange: (clickedIndex) {
-      //         controller.index.value = clickedIndex;
-      //         // setState(() {
-      //         //   _selectedIndex = clickedIndex;
-      //         // });
-      //       },
-      //       domeCircleColor: Colors.transparent,
-      //       tabs: [
-      //         MoltenTab(
-      //           icon: Icon(Icons.search),
-      //         ),
-      //         MoltenTab(
-      //           icon: Icon(Icons.home),
-      //         ),
-      //         MoltenTab(
-      //           icon: Icon(Icons.person),
-      //           // unselectedColor: Colors.transparent,
-      //         ),
-      //         MoltenTab(
-      //           icon: Icon(Icons.person),
-      //         ),
-      //         MoltenTab(
-      //           icon: Icon(Icons.person),
-      //         ),
-      //       ],
-      //     ),
-      //     Container(
-      //       color: Colors.transparent,
-      //       child: ClipRect(
-      //           clipBehavior: Clip.none,
-      //           child: BackdropFilter(
-      //             filter: ImageFilter.blur(
-      //               sigmaX: 50.0,
-      //               sigmaY: 50.0,
-      //             ),
-      //           )),
-      //     ),
-      //   ],
-      // ),
+
     );
   }
 }
