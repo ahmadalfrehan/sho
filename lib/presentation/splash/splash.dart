@@ -101,7 +101,7 @@ class Splash extends GetView<SplashController> {
                     ),
                     child: SwipeableButtonView(
                       buttonText: '',
-                      buttontextstyle: TextStyle(),
+                      buttontextstyle: const TextStyle(),
                       buttonColor: AppTheme.greenDarkenMore,
                       disableColor: AppTheme.greenDarkenMore,
                       activeColor: AppTheme.greenDarkenMore,
