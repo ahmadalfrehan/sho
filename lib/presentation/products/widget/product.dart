@@ -1,7 +1,7 @@
-import 'package:assignment/config/routes/app-routes.dart';
-import 'package:assignment/config/style/app-text-style.dart';
 import 'package:assignment/config/theme/app-theme.dart';
 import 'package:assignment/domain/entity/product-entity.dart';
+import 'package:assignment/presentation/details_product/getx/details-product-bindings.dart';
+import 'package:assignment/presentation/details_product/pages/details-product.dart';
 
 import '../../../../config/utils/constants/export.dart';
 
@@ -12,23 +12,42 @@ class Product extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    print(MediaQuery.of(context).size.width);
+    print(MediaQuery.of(context).size.height);
     return InkWell(
       onTap: () {
-        Get.toNamed(AppRoutes.DETAILS_PRODUCT, arguments: [
-          {'product': productEntity}
-        ]);
+        Get.to(
+          () => const DetailsProduct(),
+          arguments: [
+            {'product': productEntity},
+          ],
+          transition: Transition.size,
+          duration: const Duration(milliseconds: 1000),
+          binding: DetailsProductBindings(),
+        );
       },
       child: Container(
-        height: ScreenStability.height(237),
+        height: ScreenStability.height(224),
         width: ScreenStability.width(324),
         decoration: const BoxDecoration(color: AppTheme.blackColor),
         child: Stack(
+          alignment: MediaQuery.of(context).size.width > 480
+              ? Alignment.topLeft
+              : Alignment.topLeft,
           children: [
             _layoutContainer(),
-            Align(
-              alignment: const Alignment(50, -1.9),
-              child: Image.asset(productEntity.image.toString()),
-            )
+            // Align(
+            // alignment: const Alignment(50, -1.9),
+            // child:
+            Image.asset(
+              productEntity.image.toString(),
+              height: ScreenStability.height(194),
+              width: ScreenStability.width(216),
+              // alignment:  MediaQuery.of(context).size.width > 480
+              //     ? Alignment.centerRight
+              //     : Alignment.topRight,
+            ),
+            // )
           ],
         ),
       ),
@@ -38,7 +57,7 @@ class Product extends StatelessWidget {
   _layoutContainer() {
     return ClipPath(
       child: Container(
-        height: ScreenStability.height(200),
+        height: ScreenStability.height(218),
         width: ScreenStability.width(150),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
@@ -61,7 +80,7 @@ class Product extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.only(
             bottom: 0,
-            left: 10,
+            left: 5,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
@@ -76,7 +95,7 @@ class Product extends StatelessWidget {
                   Text('\$ ${productEntity.price.toString()}',
                       style:
                           AppTextStyle.textStyleWith500Weight12SizeWhiteColor),
-                  SizedBox(width: 3),
+                  const SizedBox(width: 3),
                   for (var i = 0; i < 5; i++)
                     Icon(Icons.star,
                         size: 10, color: i == 4 ? AppTheme.whiteColor : null),
@@ -84,7 +103,7 @@ class Product extends StatelessWidget {
                       style: AppTextStyle.textStyleWith400Weight6SizeWhiteColor)
                 ],
               ),
-              SizedBox(height: ScreenStability.height(10))
+              SizedBox(height: ScreenStability.height(5))
             ],
           ),
         ),

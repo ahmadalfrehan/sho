@@ -5,10 +5,12 @@ class SplashController extends GetxController {
   RxString variable = 'splash'.obs;
 
   @override
-  void onInit() {
-    Future.delayed(
-      const Duration(seconds: 200),
-      () => Get.toNamed(AppRoutes.HOME),
+  void onInit() async {
+    await Future.delayed(
+      const Duration(seconds: 500),
+      () {
+        Get.offAllNamed(AppRoutes.HOME);
+      },
     );
     super.onInit();
   }

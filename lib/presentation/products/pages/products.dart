@@ -16,7 +16,6 @@ class Products extends GetView<ProductsController> {
         color: AppTheme.blackColor,
         child: Column(
           children: [
-            //
             Padding(
               padding: EdgeInsets.only(
                 top: ScreenStability.height(30),
@@ -107,14 +106,13 @@ class Products extends GetView<ProductsController> {
                 padding: const EdgeInsets.only(left: 12),
                 child: ListView.builder(
                   itemCount: controller.productEntities.length,
-                  physics: BouncingScrollPhysics(),
+                  physics: const BouncingScrollPhysics(),
                   itemBuilder: (BuildContext context, int index) {
                     return Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Expanded(
-                          flex: 2,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
@@ -125,10 +123,9 @@ class Products extends GetView<ProductsController> {
                           ),
                         ),
                         Flexible(
-                          flex: 2,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
-                            crossAxisAlignment: CrossAxisAlignment.start,
+
                             children: [
                               const SizedBox(height: 100),
                               Product(
