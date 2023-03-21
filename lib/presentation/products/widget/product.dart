@@ -2,8 +2,10 @@ import 'package:assignment/config/theme/app-theme.dart';
 import 'package:assignment/domain/entity/product-entity.dart';
 import 'package:assignment/presentation/details_product/getx/details-product-bindings.dart';
 import 'package:assignment/presentation/details_product/pages/details-product.dart';
+import 'package:assignment/presentation/home/getx/home-bindigns.dart';
 
 import '../../../../config/utils/constants/export.dart';
+import '../../home/pages/home.dart';
 
 class Product extends StatelessWidget {
   final ProductEntity productEntity;
@@ -17,12 +19,14 @@ class Product extends StatelessWidget {
     return InkWell(
       onTap: () {
         Get.to(
-          () => const DetailsProduct(),
+              () => const DetailsProduct(),
           arguments: [
             {'product': productEntity},
           ],
-          transition: Transition.size,
-          duration: const Duration(milliseconds: 1000),
+          opaque: true,
+
+          transition: Transition.native,
+          duration: const Duration(milliseconds: 2000),
           binding: DetailsProductBindings(),
         );
       },
@@ -36,18 +40,11 @@ class Product extends StatelessWidget {
               : Alignment.topLeft,
           children: [
             _layoutContainer(),
-            // Align(
-            // alignment: const Alignment(50, -1.9),
-            // child:
             Image.asset(
               productEntity.image.toString(),
               height: ScreenStability.height(194),
               width: ScreenStability.width(216),
-              // alignment:  MediaQuery.of(context).size.width > 480
-              //     ? Alignment.centerRight
-              //     : Alignment.topRight,
             ),
-            // )
           ],
         ),
       ),
@@ -118,8 +115,6 @@ class CustomTriangleClipper extends CustomClipper<Path> {
     final path = Path();
     path.moveTo(0, size.width);
     path.lineTo(size.width, size.height);
-    // path.lineTo(0, size.height);
-
     path.close();
     return path;
   }

@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       textDirection: TextDirection.ltr,
       defaultTransition: Transition.upToDown,
-      initialRoute: AppRoutes.SPLASH,
+      initialRoute: AppRoutes.PRE_SPLASH,
       getPages: AppPages.getPages(),
       initialBinding: SplashBindings(),
       debugShowCheckedModeBanner: false,

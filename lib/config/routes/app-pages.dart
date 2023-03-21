@@ -2,6 +2,7 @@ import 'package:assignment/config/routes/app-routes.dart';
 import 'package:assignment/presentation/home/getx/home-bindigns.dart';
 import 'package:assignment/presentation/home/pages/home.dart';
 import 'package:assignment/presentation/products/pages/products.dart';
+import 'package:assignment/presentation/splash/pre-splash.dart';
 import 'package:assignment/presentation/splash/splash.dart';
 import 'package:get/get_navigation/src/routes/get_route.dart';
 
@@ -32,6 +33,11 @@ class AppPages {
         name: AppRoutes.DETAILS_PRODUCT,
         page: () => const DetailsProduct(),
         binding: DetailsProductBindings(),
+      ),
+      GetPage(
+        name: AppRoutes.PRE_SPLASH,
+        page: () => const PreSplash(),
+        binding: SplashBindings(),
       )
     ];
   }

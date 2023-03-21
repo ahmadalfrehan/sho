@@ -10,12 +10,12 @@ import 'package:swipeable_button_view/swipeable_button_view.dart';
 
 import '../home/getx/home-bindigns.dart';
 
-class Splash extends GetView<SplashController> {
+class Splash extends StatelessWidget{
   const Splash({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    log(controller.variable.value);
+
     return Scaffold(
         body: Container(
       width: Get.width,

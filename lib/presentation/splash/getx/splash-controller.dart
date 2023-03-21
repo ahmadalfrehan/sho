@@ -7,9 +7,9 @@ class SplashController extends GetxController {
   @override
   void onInit() async {
     await Future.delayed(
-      const Duration(seconds: 500),
+      const Duration(seconds: 1),
       () {
-        Get.offAllNamed(AppRoutes.HOME);
+        Get.offAllNamed(AppRoutes.SPLASH);
       },
     );
     super.onInit();
